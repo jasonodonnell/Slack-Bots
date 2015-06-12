@@ -55,7 +55,8 @@ for i in range(0, len(links)):
             curl_message='payload={"channel": "#dota", "username": "brunobot", "text": "%s", "icon_emoji": ":brunoface:"}' % (match_string)
             
             # Write trackdota url to file to check for later
-            f = open(trackdota_links_dir, 'ab')
+            f = open(trackdota_links_dir, 'a')
+            link = links[i] + '\n'
             f.write(links[i])
             f.close()
             
