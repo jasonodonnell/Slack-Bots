@@ -6,11 +6,9 @@ import subprocess
 # Since trackdota tracks all games, we are only interested in those in
 # the whitelist file.  When a game is live, it sends a message to our
 # Slack chat room #dota
-
-
 chat_url=''
 whitelist_dir='./team_whitelist.txt'
-trackdota_dir='./trackdota_links.txt'
+trackdota_links_dir='./trackdota_links.txt'
 
 with open(whitelist_dir)as whitelist_file:
     whitelist = whitelist_file.read().splitlines()
