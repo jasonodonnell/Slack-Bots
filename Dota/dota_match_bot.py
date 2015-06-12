@@ -51,6 +51,11 @@ for i in range(0, len(links)):
     if radiant[i] in whitelist or dire[i] in whitelist:
         if links[i] not in trackdota_links:
             # Construct payload
+            radiant_team = radiant[i].replace("'","")
+            radiant_team = radiant_team.replace("`","")
+            dire_team= dire[i].replace("'","")
+            dire_team = dire_team.replace("`","")
+            match_string = "%s VS %s :: <%s|Click here> for TrackDota." % (radiant_team, dire_team, links[i])
             match_string = "%s VS %s :: <%s|Click here> for TrackDota." % (radiant[i], dire[i], links[i])
             curl_message='payload={"channel": "#dota", "username": "brunobot", "text": "%s", "icon_emoji": ":brunoface:"}' % (match_string)
             
