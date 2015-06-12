@@ -1,11 +1,12 @@
 #!/usr/bin/python
-from bs4 import BeautifulSoup
-import urllib2
-import subprocess
 # This bot is for getting live dota games currently being played.  
 # Since trackdota tracks all games, we are only interested in those in
 # the whitelist file.  When a game is live, it sends a message to our
 # Slack chat room #dota
+from bs4 import BeautifulSoup
+import urllib2
+import subprocess
+
 chat_url=''
 whitelist_dir='./team_whitelist.txt'
 trackdota_links_dir='./trackdota_links.txt'
