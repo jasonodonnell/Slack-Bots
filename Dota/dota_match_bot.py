@@ -56,7 +56,6 @@ for i in range(0, len(links)):
             dire_team= dire[i].replace("'","")
             dire_team = dire_team.replace("`","")
             match_string = "%s VS %s :: <%s|Click here> for TrackDota." % (radiant_team, dire_team, links[i])
-            match_string = "%s VS %s :: <%s|Click here> for TrackDota." % (radiant[i], dire[i], links[i])
             curl_message='payload={"channel": "#dota", "username": "brunobot", "text": "%s", "icon_emoji": ":brunoface:"}' % (match_string)
             
             # Write trackdota url to file to check for later
