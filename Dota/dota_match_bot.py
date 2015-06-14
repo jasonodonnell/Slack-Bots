@@ -61,7 +61,7 @@ for i in range(0, len(links)):
             # Write trackdota url to file to check for later
             f = open(trackdota_links_dir, 'a')
             link = links[i] + '\n'
-            f.write(links[i])
+            f.write(link)
             f.close()
             
             # Execute curl 
