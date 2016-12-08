@@ -8,13 +8,13 @@ import urllib2
 import subprocess
 
 chat_url = ''
-whitelist_dir = './team_whitelist.txt'
-trackdota_links_dir = './trackdota_links.txt'
+whitelist_file = './team_whitelist.txt'
+trackdota_links_file = './trackdota_links.txt'
 
-with open(whitelist_dir, 'r') as f:
+with open(whitelist_file, 'r') as f:
     whitelist = f.read().splitlines()
 
-with open(trackdota_links_dir, 'a+') as f:
+with open(trackdota_links_file, 'a+') as f:
     trackdota_links = f.read().splitlines()
 
 # Get current games from trackdota.com widget
@@ -59,7 +59,7 @@ for i in range(0, len(links)):
             curl_message = 'payload={"channel": "#dota", "username": "brunobot", "text": "%s", "icon_emoji": ":brunoface:"}' % (match_string)
 
             # Write trackdota url to file to check for later
-            f = open(trackdota_links_dir, 'a')
+            f = open(trackdota_links_file, 'a')
             link = links[i] + '\n'
             f.write(link)
             f.close()
