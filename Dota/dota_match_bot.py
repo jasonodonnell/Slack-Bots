@@ -11,11 +11,11 @@ chat_url = ''
 whitelist_dir = './team_whitelist.txt'
 trackdota_links_dir = './trackdota_links.txt'
 
-with open(whitelist_dir) as whitelist_file:
-    whitelist = whitelist_file.read().splitlines()
+with open(whitelist_dir, 'r') as f:
+    whitelist = f.read().splitlines()
 
-with open(trackdota_links_dir) as trackdota_file:
-    trackdota_links = trackdota_file.read().splitlines()
+with open(trackdota_links_dir, 'a+') as f:
+    trackdota_links = f.read().splitlines()
 
 # Get current games from trackdota.com widget
 response = urllib2.urlopen('http://www.trackdota.com/data/embed/dark/')
